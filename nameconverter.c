@@ -21,7 +21,6 @@ void characterToBinary(char *string, char ch) {
 }
 
 int main(int argc, char *argv[]) {
-  printf("Name is: %s\n", argv[1]);
   char binaryOutput[1024];
   char hexOutput[100];
   char decimalOutput[100];
@@ -43,9 +42,10 @@ int main(int argc, char *argv[]) {
     strcat(decimalOutput, " ");
   }
 
-  printf("In decimal: %s\n", decimalOutput);
-  printf("In binary: %s\n", binaryOutput);
-  printf("In hex: %s\n", hexOutput);
+  printf("Name is:     %s\n", argv[1]);
+  printf("In decimal:  %s\n", decimalOutput);
+  printf("In binary:   %s\n", binaryOutput);
+  printf("In hex:      %s\n", hexOutput);
 
   return 0;
 }
