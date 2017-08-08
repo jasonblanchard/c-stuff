@@ -38,6 +38,7 @@ void insertion_sort(int *array, int size) {
 }
 
 int main() {
+  // TODO: Read array in from stdin
   int array[6] = { 5, 3, 6, 13, 65, 22 };
   int length = array_length(array);
   insertion_sort(array, length);
