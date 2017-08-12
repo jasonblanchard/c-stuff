@@ -6,13 +6,14 @@
 // char first_name[20]
 // char last_name[20]
 // scanf("%19s %19s", first_name, last_name);
+// fscanf(in_file, "&19s[^\n]", buffer); // Can read from a file stream
 
 // char food[5];
 // fgets(food, sizeof(food), stdin)
 
 // fprintf() prints to a data stream
 // fprintf(stdout, "I like Turtles!");
-// fprintf(stderr, "Something went wrong :(");
+// fprintf(stderr, "Something went wrong :("); // Can use this to print to a file stream.
 
 // Redirect spooky.csv as stdin to geo2json, redirect stdout of geo2json to output.json
 // ./geo2json < spooky.csv > output.json
