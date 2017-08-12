@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define array_length(arr) (sizeof(arr) == 0 ? 0	: sizeof (arr) / sizeof((arr)[0]))
 
@@ -27,9 +28,9 @@ void insertion_sort(int *array, int size) {
   for (i = array; i < end; i++) {
     int *j = i - 1;
     while(j >= array) {
-      if (*i < *j) {
-        int tmp = *i;
-        *i = *j;
+      if (*(j + 1) < *j) {
+        int tmp = *(j + 1);
+        *(j + 1) = *j;
         *j = tmp;
       }
       j--;
@@ -37,13 +38,26 @@ void insertion_sort(int *array, int size) {
   }
 }
 
-int main() {
-  // TODO: Read array in from stdin
-  int array[6] = { 5, 3, 6, 13, 65, 22 };
-  int length = array_length(array);
-  insertion_sort(array, length);
-  for (int i = 0; i < length; i++) {
+int main(int argc, char *argv[]) {
+  int *array;
+  int size = atoi(argv[1]);
+  int i;
+  char buffer[5];
+
+  array = malloc(size * sizeof(int));
+  for(i = 0; i < size; i++) {
+    fgets(buffer, size, stdin);
+    array[i] = atoi(buffer);
+  }
+
+  // int array[6] = { 5, 3, 6, 13, 65, 22 };
+  // int length = array_length(array);
+
+  insertion_sort(array, size);
+  for (int i = 0; i < size; i++) {
     printf("%i\n", array[i]);
   }
+
+  free(array);
   return 0;
 }
